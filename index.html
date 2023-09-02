@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Product Feedback App</title>
+</head>
+<body>
+    <header>
+        <h1>User Reviews</h1>
+    </header>
+    <main>
+        <section class="feedback-form">
+            <h2>Leave A Review Anonymously</h2>
+            <form id="feedbackForm">
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="feature">Feature</option>
+                    <option value="bug">Bug</option>
+                    <option value="enhancement">Enhancement</option>
+                </select>
+                <label for="feedback">Review:</label>
+                <textarea id="feedback" name="feedback" rows="4" required></textarea>
+                <button type="submit">Submit Review</button>
+            </form>
+        </section>
+        <section class="feedback-controls">
+            <h2>Customize Your Feed</h2>
+            <div class="filter">
+                <label for="filterCategory">Filter by Category:</label>
+                <select id="filterCategory">
+                    <option value="all">All</option>
+                    <option value="feature">Feature</option>
+                    <option value="bug">Bug</option>
+                    <option value="enhancement">Enhancement</option>
+                </select>
+            </div>
+            <div class="sort">
+                <label for="sort">Sort by:</label>
+                <select id="sort">
+                    <option value="upvotes-desc">Most Upvotes</option>
+                    <option value="upvotes-asc">Least Upvotes</option>
+                    <option value="comments-desc">Most Comments</option>
+                    <option value="comments-asc">Least Comments</option>
+                </select>
+            </div>
+        </section>
+        <section class="feedback-list">
+            <h2>Reviews</h2>
+            <div id="feedbackList">
+                <!-- Feedback items will be displayed here -->
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
