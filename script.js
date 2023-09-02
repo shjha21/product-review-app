@@ -4,15 +4,12 @@ let feedbackData = [
         id: 1,
         category: 'feature',
         feedback: 'Add dark mode to the app.',
-        username: 'User1', // Username
         upvotes: 5,
         comments: [
             {
-                username: 'User2', // Username
                 text: 'Great idea! I love dark mode.'
             },
             {
-                username: 'User3', // Username
                 text: 'Yes, dark mode is essential nowadays.'
             }
         ],
@@ -21,11 +18,9 @@ let feedbackData = [
         id: 2,
         category: 'bug',
         feedback: 'Fix login issue on iOS devices.',
-        username: 'User4', // Username
         upvotes: 3,
         comments: [],
     },
-    // Add more feedback items here
 ];
 
 const itemsPerPage = 5; // Number of feedback items to display per page
@@ -81,9 +76,7 @@ function submitFeedback(event) {
     const category = document.getElementById('category').value;
     const feedbackText = document.getElementById('feedback').value;
 
-    // You can add validation here
-
-    // Generate a unique ID (for simplicity, increment it)
+    // Generate a unique ID
     const id = feedbackData.length + 1;
 
     // Create a new feedback item
@@ -112,17 +105,14 @@ function upvoteFeedback(event) {
 
         const feedback = feedbackData.find((item) => item.id === feedbackId);
         if (feedback) {
-            feedback.upvotes += 1;
+            feedback.upvotes+= 1;
 
             // Update the upvote count immediately
             const upvoteCountElement = event.target.parentElement.querySelector('.upvote-count');
             if (upvoteCountElement) {
-                upvoteCountElement.textContent = feedback.upvotes;
+                upvoteCountElement.textContent = feedback.upvotes+1;
             }
         }
-
-        // Prevent the button's default behavior
-        event.preventDefault();
     }
 }
 
